@@ -12,7 +12,7 @@ def find_index_from_xy(x, y):
     return row, col, index
 
 pygame.init()
-display.set_caption('My Game')
+display.set_caption('Memória Querida')
 screen = display.set_mode((gc.SCREEN_SIZE, gc.SCREEN_SIZE))
 matched = image.load('other_assets/matched.png')
 running = True
