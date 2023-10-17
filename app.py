@@ -1,9 +1,10 @@
 import pygame
 import game_config as gc
 
-from pygame import display, event, image
+from pygame import display, event, image, mixer
 from time import sleep
 from animal import Animal
+
 
 def find_index_from_xy(x, y):
     row = y // gc.IMAGE_SIZE
@@ -19,9 +20,20 @@ running = True
 tiles = [Animal(i) for i in range(0, gc.NUM_TILES_TOTAL)]
 current_images_displayed = []
 
+#musica
+
+# pygame.mixer.init()
+# pygame.init()
+# pygame.mixer.music.load('music/game.music.mp3')
+# pygame.music.play()
+# pygame.event.wait()
+
+# mixer.init()
+# mixer.music.load('music/game.music.mp3')
+# mixer.music.play()
+
 while running:
     current_events = event.get()
-
     for e in current_events:
         if e.type == pygame.QUIT:
             running = False
@@ -38,6 +50,7 @@ while running:
                     current_images_displayed = current_images_displayed[1:] + [index]
                 else:
                     current_images_displayed.append(index)
+
 
     # Display animals
     screen.fill((255, 255, 255))
